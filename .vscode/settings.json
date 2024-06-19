@@ -1,0 +1,12 @@
+{
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#7bff00",
+    "editorBracketHighlight.foreground1": "#05e24f",
+    "editorBracketHighlight.foreground2": "#f0c818",
+    "editorBracketHighlight.foreground3": "#ba48dd",
+    "editorBracketHighlight.foreground4": "#22b2c2",
+    "editorBracketHighlight.foreground5": "#74c028",
+    "editorBracketHighlight.foreground6": "#abb2c0",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ff0008"
+  }
+}

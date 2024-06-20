@@ -7,7 +7,8 @@ class Routes
   }
   ROUTES = {
     '/' => MainController,
-    '/echo' => EchoController
+    '/echo' => EchoController,
+    '/user-agent' => UserAgentController
   }
 
   class << self

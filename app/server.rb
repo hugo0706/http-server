@@ -5,7 +5,11 @@ server = TCPServer.new("localhost", 4221)
 
 loop do
   client_socket, client_address = server.accept
-  RequestHandler.new(client_socket).call
+  Thread.new(client_socket) do |client|
+    RequestHandler.new(client).call
+  ensure
+    client.close
+  end
 end
 
 server.close

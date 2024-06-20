@@ -1,13 +1,14 @@
 require_relative 'routes'
+require_relative './helpers/http_responses.rb'
 
 class ResponseHandler
   class << self
     def call(request, socket)
       handler = Routes.handler_for(request.target)
       if handler
-        response = handler.handle(request)
+        response = handler.new(request).handle
       else
-        socket.puts "HTTP/1.1 404 Not Found\r\n\r\n"
+        response = not_found
       end
 
       send_response(response, socket)

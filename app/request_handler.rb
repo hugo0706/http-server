@@ -24,7 +24,7 @@ class RequestHandler
 
     if content_length
       body_lenght = content_length.split(': ').last.to_i
-      @body = socket.read(lenght)
+      @body = socket.read(body_lenght)
     end
   end
 
@@ -40,6 +40,6 @@ class RequestHandler
   end
 
   def content_length
-    @headers.find {|header| header.start_with?('Content-Lenght:')}
+    @headers.find {|header| header.start_with?('Content-Length: ')}
   end
 end

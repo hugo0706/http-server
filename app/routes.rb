@@ -1,14 +1,11 @@
 Dir[File.join(__dir__, 'controllers', '*.rb')].each { |file| require_relative file }
 
 class Routes
-  PARAMETERS = {
-    '{str}' =>  /^[a-zA-Z0-9_-]+$/
-
-  }
   ROUTES = {
     '/' => MainController,
     '/echo' => EchoController,
-    '/user-agent' => UserAgentController
+    '/user-agent' => UserAgentController,
+    '/files' => FilesController
   }
 
   class << self

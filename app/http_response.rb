@@ -6,12 +6,13 @@ class HttpResponse
     '404' => 'Not Found'
   }
 
-  attr_reader :body, :http_status, :http_version, :http_code
+  attr_reader :body, :http_status, :http_version, :http_code, :content_type
 
-  def initialize(body:, http_code:)
+  def initialize(body:, http_code:, content_type:)
     @body = body
     @http_code = http_code.to_s
     @http_version = HTTP_VERSION
+    @content_type = content_type
   end
 
   def to_s
@@ -25,6 +26,6 @@ class HttpResponse
   end
 
   def content_type
-    "Content-Type: text/plain#{CRLF}"
+    "Content-Type: #{@content_type}#{CRLF}" if @content_type
   end
 end
